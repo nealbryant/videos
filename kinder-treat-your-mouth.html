@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kinder Bueno – Treat Your Mouth</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
+  #start {
+    position: absolute; inset: 0; border: 0; padding: 0; cursor: pointer;
+    background: #000 url("media/kinder-treat-your-mouth.jpg") center / cover no-repeat;
+  }
+  #start svg {
+    position: absolute; left: 50%; top: 50%; width: 32px; height: 36px; margin: -18px 0 0 -14px;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+    transition: transform .2s ease;
+  }
+  #start:hover svg { transform: scale(1.08); }
+  #start:focus-visible svg { outline: 3px solid #fff; outline-offset: 6px; border-radius: 4px; }
+  @media (max-width: 500px) { #start svg { transform: scale(.75); } }
+</style>
+</head>
+<body>
+<video id="v" src="media/kinder-treat-your-mouth.mp4" poster="media/kinder-treat-your-mouth.jpg" playsinline loop preload="metadata"
+  controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture
+  oncontextmenu="return false;" aria-label="Kinder Bueno – Treat Your Mouth"></video>
+<button id="start" aria-label="Play video"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M10 4.5 C10 1.4 13.3 -0.5 16 1 L59 31.8 C61.6 33.6 61.6 38.4 59 40.2 L16 71 C13.3 72.5 10 70.6 10 67.5 Z" fill="#fff"/></svg></button>
+<script>
+  const v = document.getElementById('v'), b = document.getElementById('start');
+  b.addEventListener('click', () => { b.remove(); v.controls = true; v.play(); });
+</script>
+</body>
+</html>
